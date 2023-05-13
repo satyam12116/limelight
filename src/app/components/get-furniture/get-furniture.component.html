@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>About</title>
+  </head>
+  <body>
+    
+
+    <div class="container">
+    <h2 class="text-center my-2 py-2">Get Furniture</h2>
+
+
+    <div *ngIf="closeForm">
+      <form [formGroup]="projectForm"(submit)="submitHandler()"  class="needs-validation" novalidate>
+      
+        <div class="mb-3">
+          <label for="name" class="form-label">Name:</label>
+          <input type="name" class="form-control" id="name" name="name" formControlName="name" placeholder="Enter Your Full Name"required [class.is-invalid]="name.invalid && (name.dirty || name.touched)">
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
+            <div *ngIf="name.errors?.['required']">
+              This field is required.
+            </div>
+        </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="email" class="form-label">Email ID:</label>
+          <input type="email" class="form-control" id="email" name="email"  formControlName="email" placeholder="Enter Your Email Id" required [class.is-invalid]="name.invalid && (name.dirty || name.touched)">
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
+            <div *ngIf="name.errors?.['required']">
+              This field is required.
+            </div>
+        </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone Number:</label>
+          <input type="number" class="form-control" id="phone" name="phone"  formControlName="phone"placeholder="Enter Your Phone Number" required [class.is-invalid]="name.invalid && (name.dirty || name.touched)">
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
+            <div *ngIf="name.errors?.['required']">
+              This field is required.
+            </div>
+        </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="dateOfDelivery" class="form-label">Date of Delivery</label>
+          <input type="date" class="form-control" id="dateOfDelivery"  formControlName="dateOfDelivery"name="dateOfDelivery"placeholder="Enter Date of Delivery"required [class.is-invalid]="dateOfDelivery.invalid && (dateOfDelivery.dirty || dateOfDelivery.touched)">
+          <div *ngIf="dateOfDelivery.invalid && (dateOfDelivery.dirty || dateOfDelivery.touched)" class="invalid-feedback">
+            <div *ngIf="dateOfDelivery.errors?.['required']">
+              This field is required.
+            </div>
+        </div>
+        </div>
+     
+        <div class="mb-3">
+          <label for="furnitureToChoose" class="form-label">Furniture to choose</label>
+          <!-- <input type="text" class="form-control" id="furnitureToChoose"  formControlName="furnitureToChoose"name="language"placeholder="Add Custom Furniture" required [class.is-invalid]="furnitureToChoose.invalid && (furnitureToChoose.dirty || furnitureToChoose.touched)"> -->
+          <select class="form-control" id="furnitureToChoose"  formControlName="furnitureToChoose"name="language"placeholder="Add Custom Furniture" required [class.is-invalid]="furnitureToChoose.invalid && (furnitureToChoose.dirty || furnitureToChoose.touched)">
+            <option value="Wardrobe">Wardrobe</option>
+            <option value="Bed">Bed</option>
+            <option value="Desk">Desk</option>
+            <option value="Sofa cum bed">Sofa cum bed</option>
+            <option value="Dining table">Dining table</option>
+            <option value="Sliding door warSofa cum beddrobe">Sliding door warSofa cum beddrobe</option>
+            <option value="1 seater sofa">1 seater sofa</option>
+            <option value="Rocking chair">Rocking chair</option>
+            <option value="Shoe cabinet">Shoe cabinet</option>
+          </select>
+          <div *ngIf="furnitureToChoose.invalid && (furnitureToChoose.dirty || furnitureToChoose.touched)" class="invalid-feedback">
+            <div *ngIf="furnitureToChoose.errors?.['required']">
+              This field is required.
+            </div>
+        </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="customFurniture" class="form-label">custom Furniture</label>
+          <input type="text" class="form-control"  formControlName="customFurniture"id="customFurniture" name="customFurniture"placeholder=" Custom Furniture" required [class.is-invalid]="customFurniture.invalid && (customFurniture.dirty || customFurniture.touched)">
+          <div *ngIf="customFurniture.invalid && (customFurniture.dirty || customFurniture.touched)" class="invalid-feedback">
+            <div *ngIf="customFurniture.errors?.['required']">
+              This field is required.
+            </div>
+        </div>
+        </div>
+        
+  
+        <div class="mb-3">
+          <label for="deliveryAddress" class="form-label">Address</label>
+          <input type="text" class="form-control"  formControlName="deliveryAddress" id="deliveryAddress" name="deliveryAddress"placeholder="Enter Your deliveryAddress" required [class.is-invalid]="deliveryAddress.invalid && (deliveryAddress.dirty || deliveryAddress.touched)">
+          <div *ngIf="deliveryAddress.invalid && (deliveryAddress.dirty || deliveryAddress.touched)" class="invalid-feedback">
+            <div *ngIf="deliveryAddress.errors?.['required']">
+              This field is required.
+            </div>
+        </div>
+        </div>
+        <div class="mb-3">
+            <label for="suggestionNote" class="form-label">Suggestion Note</label>
+            <input type="text" class="form-control"  formControlName="suggestionNote" id="suggestionNote" name="suggestionNote"placeholder="Suggest a note" required [class.is-invalid]="suggestionNote.invalid && (suggestionNote.dirty || suggestionNote.touched)">
+            <div *ngIf="suggestionNote.invalid && (suggestionNote.dirty || suggestionNote.touched)" class="invalid-feedback">
+              <div *ngIf="suggestionNote.errors?.['required']">
+                This field is required.
+              </div>
+          </div>
+          </div>
+  
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" >
+          <label class="form-check-label" for="exampleCheck1">Remeber Me</label>
+        </div>
+        <button type="submit" (click)="validate()"class="btn btn-dark">Submit</button>
+      </form>
+    </div>
+    
+  </div>
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
+

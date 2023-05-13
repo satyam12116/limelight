@@ -1,0 +1,106 @@
+<h2>Project Information</h2>
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Date of Delivery</th>
+        <th>Delivery Address</th>
+        <th>Furniture To Choose</th>
+        <th>Custom Furniture</th>
+        <th>Suggestion Note</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of tableData">
+            <td>{{ item._id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.phoneNo }}</td>
+            <td>{{ item.dateOfDelivery }}</td>
+            <td>{{ item.deliveryAddress }}</td>
+            <td>{{ item.furnitureToChoose }}</td>
+            <td>{{ item.customFurniture }}</td>
+            <td>{{ item.suggestionNote }}</td>
+            <td>{{ item.status }}</td>
+        <td>
+            <div style="display:flex">
+                <a style="margin-right:10px"(click)="acceptHandler(item)" class="btn btn-primary btn-sm">
+                     Accept
+                  </a>
+                  <a (click)="rejectHandler(item)" class="btn btn-primary btn-sm">
+                     Reject
+                  </a>
+            </div>
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Users Information</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone No.</th>
+        <th>Gender</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of tableData1">
+        <td>{{ item._id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.phoneNo }}</td>
+        <td>{{ item.gender }}</td>
+        <td>
+          <a style="margin-right:10px" (click)="deleteUser(item)" class="btn btn-primary btn-sm">
+             Delete
+          </a>
+          <a (click)="editUser(item)" class="btn btn-primary btn-sm">
+            Edit
+         </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Contact Us Information</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone No.</th>
+        <th>Message</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of tableData2">
+        <td>{{ item._id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.phoneNo }}</td>
+        <td>{{ item.message }}</td>
+   
+        <td>
+          <a (click)="deleteHandler(item)" class="btn btn-primary btn-sm">
+            Delete
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  
+

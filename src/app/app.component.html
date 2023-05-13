@@ -1,0 +1,176 @@
+<!-- header -->
+<header>
+  <!-- header inner -->
+  <div class="header">
+     <div class="container">
+        <div class="row">
+           <div class="col-md-12 col-sm-3 col logo_section">
+              <div class="full">
+                 <div class="center-desk">
+                    <div class="logo">
+                       <a href="index.html"><img src="/assets/images/logo.png" alt="#" /></a>
+                    </div>
+                 </div>
+              </div>
+           </div>
+           <div class="col-md-12 offset-md-1">
+              <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                 <span class="navbar-toggler-icon"></span>
+                 </button>
+                 <div [ngSwitch]="menuType" class="collapse navbar-collapse" id="navbarsExample04">
+                    <ul *ngSwitchCase="'default'" class="navbar-nav mr-auto">
+                       <li class="nav-item active">
+                          <a class="nav-link" href="#" routerLink="/">Home</a>
+                       </li>
+                       
+                       <li class="nav-item">
+                          <a class="nav-link" href="#" routerLink="/services">Services</a>
+                       </li>
+                       <li class="nav-item">
+                          <a class="nav-link" href="#" routerLink="/ourwork">Our work</a>
+                       </li>
+                       <li class="nav-item">
+                        <a class="nav-link" href="#" routerLink="/order">Order</a>
+                     </li>
+                       <!-- <li class="nav-item">
+                        <a class="nav-link" href="#" routerLink="/aboutus">About us</a>
+                       </li> -->
+                       <li class="nav-item">
+                          <a class="nav-link" href="#" routerLink="/contactus">Contact Us</a>
+                       </li>
+                       
+                       <div ngbDropdown class="nav-item">
+                        <span class="nav-link" id="dropdownBasic1" ngbDropdownToggle>Login</span>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                          <a>
+                            <button  routerLink="admin-auth"ngbDropdownItem>admin</button>
+                          </a>
+                          <a>
+                            <button  routerLink="user-auth" ngbDropdownItem>user</button>
+                          </a>
+                       
+                        </div>
+                      </div>
+                    </ul>
+                    <ul *ngSwitchCase="'user'" class="navbar-nav mr-auto">
+                     <li class="nav-item active">
+                        <a class="nav-link" href="#" routerLink="/">Home</a>
+                     </li>
+                     
+                     <li class="nav-item">
+                        <a class="nav-link" href="#" routerLink="/services">Services</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#" routerLink="/ourwork">Our work</a>
+                     </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#" routerLink="/order">Order</a>
+                   </li>
+                     <!-- <li class="nav-item">
+                      <a class="nav-link" href="#" routerLink="/aboutus">About us</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#" routerLink="/contactus">Contact Us</a>
+                     </li> -->
+                     <li class="nav-item">
+                        <a class="nav-link" href="#" routerLink="/req">Request Status</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#" routerLink="/getFurniture">Get Furniture</a>
+                     </li>
+                     <div ngbDropdown>
+                        <span  id="dropdownBasic1" ngbDropdownToggle>My Account</span>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                          
+                              <a  routerLink="editprofile" >
+                                 Edit Profile
+                               </a>
+                          <br>
+                         
+                           <a (click)="handler()" routerLink="user-auth" >
+                              LogOut
+                            </a>
+                         
+                           
+                       
+                        </div>
+                      </div>
+                     
+                  </ul>
+                  <ul *ngSwitchCase="'admin'" class="navbar-nav mr-auto">
+                   
+                  
+                     <li class="nav-item">
+                        <a class="nav-link" href="#" routerLink="/admin-dashboard">Dashboard</a>
+                     </li>
+                     <li  class="nav-item">
+                        <a class="nav-link" (click)="handler()" routerLink="user-auth">
+                           LOGOUT
+                         </a>
+                      
+                     </li>
+                          
+                     
+                  </ul>
+                 </div>
+              </nav>
+           </div>
+        </div>
+     </div>
+  </div>
+</header>
+<!-- end header inner -->
+<!-- end header -->
+<router-outlet></router-outlet>
+
+<!--  footer -->
+<footer>
+   <div class="footer">
+      <div class="container">
+         <div class="row" style="justify-content: space-between;">
+            
+            <div class=" col-md-3 col-sm-6">
+               <h3>LET US HELP YOU </h3>
+               <p  class="variat pad_roght2">Contact us for about 
+                  our delivery if our delivery have any issue.
+               </p>
+            </div>
+            <div class="col-md-3 col-sm-6">
+               <h3>INFORMATION</h3>
+               <ul class="link_menu">
+                  <li><a href="#" routerLink="/">Home</a></li>
+                  <li><a href="#" routerLink="/services">Services</a></li>
+                  <li><a href="#" routerLink="/ourwork">Our work</a></li>
+                  <li><a href="#" routerLink="/order">Order</a></li>
+                  <li><a href="#" routerLink="/aboutus">About us</a></li>
+                  <li><a href="#" routerLink="/contactus">Contact Us</a></li>
+               </ul>
+            </div>
+            <div class="col-md-3 col-sm-6">
+               <h3>OUR Design</h3>
+               <p  class="variat">We have 10+ years of 
+                  experience in this business. 
+                  We provide your damanding products 
+                  within 3-4 working days.
+               </p>
+            </div>
+            <div class="col-md-6 offset-md-6">
+               <form id="hkh" class="bottom_form">
+                  
+               </form>
+            </div>
+         </div>
+      </div>
+      <div class="copyright">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-10 offset-md-1">
+                  <p>©2023 All Rights Reserved. Design by <a href="#"> Prayag Gharat.</a></p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</footer>
+<!-- end footer -->
